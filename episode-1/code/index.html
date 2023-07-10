@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello World</title>
-
-</head>
-<body>
-    <div id = "root">
+  </head>
+  <body>
+    <div id="root">
+      <h1>Hello World from HTML</h1>
     </div>
     <script>
-        const root = document.getElementById("root");
-        const heading = document.createElement("h1");
-        /**
-         * * if I do root.innerHTML = heading.innerText then I just get the text inside heading without the h1 tag,
-         * * thats why I need to use appendChild so that I get the text inside a h1 tag
-        */
-        heading.innerHTML = "Hello World from Javascript";
-        root.appendChild(heading);
+      const headingJavascript = document.createElement("h1");
+      headingJavascript.innerHTML = "Hello World from JavaScript";
+      const root = document.getElementById("root");
+      root.appendChild(headingJavascript);
     </script>
-</body>
+    <script>
+      const headingReact = React.createElement(
+        "h1",
+        {},
+        "Hello World from React"
+      );
+    </script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+  </body>
 </html>
