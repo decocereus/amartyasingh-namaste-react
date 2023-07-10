@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+
+</head>
+<body>
+    <div id = "root">
+    </div>
+    <script>
+        const root = document.getElementById("root");
+        const heading = document.createElement("h1");
+        /**
+         * * if I do root.innerHTML = heading.innerText then I just get the text inside heading without the h1 tag,
+         * * thats why I need to use appendChild so that I get the text inside a h1 tag
+        */
+        heading.innerHTML = "Hello World from Javascript";
+        root.appendChild(heading);
+    </script>
+</body>
+</html>
