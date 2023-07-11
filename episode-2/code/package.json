@@ -4,8 +4,22 @@
   "description": "Learning from episode 2 of Namaste react",
   "main": "App.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "npx parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/decocereus/amartyasingh-namaste-react.git"
   },
   "author": "Amartya Singh",
-  "license": "ISC"
+  "license": "ISC",
+  "homepage": "https://github.com/decocereus/amartyasingh-namaste-react.git#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }

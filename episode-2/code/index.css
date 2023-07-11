@@ -1,6 +1,10 @@
 #root {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(171, 162, 162);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -8,9 +12,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    background-color: rgb(151, 222, 218);
 }
 
 #heading {
     color: red;
+    padding: 10px 10px 10px 10px;
 }
