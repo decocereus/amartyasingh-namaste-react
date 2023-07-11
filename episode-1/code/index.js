@@ -9,7 +9,7 @@ const headingReact = React.createElement(
   "Hello World from React"
 );
 /**
- * * created a new root div for react-dom because it was overwriting the contents of the existing root.
+ * * created a new root div for react-dom because it was replacing the contents of the existing root.
  * * To see all three methods a new div element was required.
  */
 
@@ -18,7 +18,7 @@ const parent = React.createElement(
   "div",
   { id: "parent" },
   /**
-   * * If we want to create siblings, then we need to create an array and pass the siblings insidi it. this is how we can create siblings in react.
+   * * If we want to pass in multiple children then we need to pass the children inside a list [child1, child2....]
    */
   React.createElement("div", { id: "child" }, [
     React.createElement("h1", {}, "I am h1"),
