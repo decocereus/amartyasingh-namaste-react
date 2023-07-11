@@ -1,0 +1,11 @@
+{
+  "name": "ignition-ep-2",
+  "version": "1.0.0",
+  "description": "Learning from episode 2 of Namaste react",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Amartya Singh",
+  "license": "ISC"
+}
