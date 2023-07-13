@@ -1,11 +1,13 @@
-- - React.createElement returns an _object_
-- - the render function changes that object into the specified type of tag which browser understands
-- - createElement takes in three arguments, type, attributes and children. These three together make the props.
+# Notes
 
-- - created a new root div for react-dom because it was replacing the contents of the existing root.
-- - To see all three methods a new div element was required.
+- React.createElement returns an _object_
+- the render function changes that object into the specified type of tag which browser understands
+- createElement takes in three arguments, type, attributes and children. These three together make the props.
 
-- - If we want to pass in multiple children then we need to pass the children inside a list [child1, child2....]
+- created a new root div for react-dom because it was replacing the contents of the existing root.
+- To see all three methods a new div element was required.
+
+- If we want to pass in multiple children then we need to pass the children inside a list [child1, child2....]
 
 # What is Emmet?
 
