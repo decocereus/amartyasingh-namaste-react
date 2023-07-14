@@ -45,7 +45,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 33.5em;
+  height: 48em;
 }
 
 .searchContainer {
@@ -87,14 +87,20 @@ body {
 
 .restaurantCardContainer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  width: 95%;
+  width: 70%;
 }
 
 .cardContainer {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.cardContainer:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  cursor: pointer;
 }
 
 .restaurantInfoContainer {
@@ -119,4 +125,10 @@ h4 {
 .priceContainer > h4 {
   padding: 0.3em 0.3em;
   margin: 0.1em 0;
+}
+
+.footer {
+  padding-left: 1em;
+  font-weight: 600;
+  height: 5.4em;
 }

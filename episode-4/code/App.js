@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 /**
  * <Header/>
@@ -37,7 +37,7 @@ const RestaurantCard = (props) => {
   return (
     <div className="cardContainer">
       <img src={props.image} className="restaurantImg" />
-      <hr class="solid"> </hr>
+      <hr className="solid" />
       <div className="restaurantInfoContainer">
         <div className="nameCusineContainer">
           <h3 className="name">{props.name}</h3>
@@ -93,11 +93,16 @@ const Body = () => {
   );
 };
 
+const Footer = () => {
+  return <div className="footer">Copyright</div>;
+};
+
 const AppLayout = () => {
   return (
-    <div>
+    <div className="globalContainer">
       <Header />
       <Body />
+      <Footer />
     </div>
   );
 };
