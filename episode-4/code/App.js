@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { restaurantList } from "./restaurantList";
 
 /**
  * <Header/>
@@ -34,17 +35,27 @@ const Header = () => {
 };
 
 const RestaurantCard = (props) => {
+  const resData = props.resData;
+  const { cloudinaryImageId, name, cuisines, costForTwo, deliveryTime } =
+    resData?.data;
   return (
     <div className="cardContainer">
-      <img src={props.image} className="restaurantImg" />
-      <hr className="solid" />
+      <img
+        src={
+          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
+          cloudinaryImageId
+        }
+        className="restaurantImg"
+      />
+
       <div className="restaurantInfoContainer">
         <div className="nameCusineContainer">
-          <h3 className="name">{props.name}</h3>
-          <h4 className="cusine">{props.cusine}</h4>
+          <h3 className="name">{name}</h3>
+          <h4 className="cusine">{cuisines.join(", ")}</h4>
         </div>
         <div className="priceContainer">
-          <h4 className="price">500</h4>
+          <h4 className="price">₹{costForTwo / 100} FOR TWO</h4>
+          <h4 className="price">Delivered in {deliveryTime} minutes</h4>
         </div>
       </div>
     </div>
@@ -68,33 +79,20 @@ const Body = () => {
         </div>
       </div>
       <div className="restaurantCardContainer">
-        <RestaurantCard
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLIAiB6zRQaKQLN2mME7YyAGe6pEmuIIF90g&usqp=CAU"
-          name="KFC"
-          cusine="Chicken"
-        />
-        <RestaurantCard
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLIAiB6zRQaKQLN2mME7YyAGe6pEmuIIF90g&usqp=CAU"
-          name="KFC"
-          cusine="Chicken"
-        />
-        <RestaurantCard
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLIAiB6zRQaKQLN2mME7YyAGe6pEmuIIF90g&usqp=CAU"
-          name="KFC"
-          cusine="Chicken"
-        />
-        <RestaurantCard
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLIAiB6zRQaKQLN2mME7YyAGe6pEmuIIF90g&usqp=CAU"
-          name="KFC"
-          cusine="Chicken"
-        />
+        {restaurantList.map((resData) => {
+          return <RestaurantCard key={resData.data.id} resData={resData} />;
+        })}
       </div>
     </div>
   );
 };
 
 const Footer = () => {
-  return <div className="footer">Copyright</div>;
+  return (
+    <div className="footer">
+      <label></label>
+    </div>
+  );
 };
 
 const AppLayout = () => {
