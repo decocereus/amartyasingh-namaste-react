@@ -1,14 +1,12 @@
 import React from "react";
 import "../index.css";
+import { LOGO_URL } from "../../utils/constants.js";
 
-export default function Header() {
+const Header = () => {
   return (
     <div className="header">
       <div className="logoContainer">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQJTmswUb5uIEzpJohlELVyfns0JE-VELMfhmgplglxOxTDW_1aHZxYzY67HdIUgG7Zuk&usqp=CAU"
-          className="logo"
-        />
+        <img src={LOGO_URL} className="logo" />
       </div>
       <div className="navContainer">
         <ul className="navItemsList">
@@ -20,4 +18,6 @@ export default function Header() {
       </div>
     </div>
   );
-}
+};
+
+export default Header;
