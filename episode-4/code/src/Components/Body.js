@@ -1,17 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { restaurantList } from "../../utils/mockData";
+import { API_URL } from "../../utils/constants";
 import RestaurantCard from "./RestaurantCard";
 import Searchbar from "./Searchbar";
 import "../index.css";
-import { useState } from "react";
 
 export default function Body() {
   const [filtered, setFiltered] = useState(restaurantList);
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const res = await fetch(API_URL);
+    const json = await res.json();
+    setFiltered(
+      json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants
+    );
+  };
+
   const filterData = () => {
     setFiltered(
       restaurantList.filter((res) => {
-        return res.data.avgRating >= 3.8;
+        return res.info.avgRating >= 3.8;
       })
     );
   };
@@ -24,8 +36,9 @@ export default function Body() {
     <div className="body">
       <Searchbar filter={filterData} removeFilter={removeFilterData} />
       <div className="restaurantCardContainer">
+        {console.log(filtered)}
         {filtered.map((resData) => {
-          return <RestaurantCard key={resData.data.id} resData={resData} />;
+          return <RestaurantCard key={resData.info.id} resData={resData} />;
         })}
       </div>
     </div>
