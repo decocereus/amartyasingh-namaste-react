@@ -7,6 +7,7 @@ import "../index.css";
 
 export default function Body() {
   const [cardData, setCardData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -15,27 +16,40 @@ export default function Body() {
   const fetchData = async () => {
     const res = await fetch(API_URL);
     const json = await res.json();
-    setCardData(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    const data =
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    setCardData(data);
+    setFilteredData(data);
   };
 
   const filterData = () => {
     const filteredCardData = cardData.filter((res) => {
       return res.info.avgRating >= 3.8;
     });
-    setCardData(filteredCardData);
+    setFilteredData(filteredCardData);
   };
 
   const removeFilterData = () => {
-    setCardData(cardData);
+    setFilteredData(cardData);
+  };
+
+  const searchRestaurants = (searchText) => {
+    const filteredCardData = cardData.filter((res) => {
+      return res.info.name.toLowerCase().includes(searchText.toLowerCase());
+    });
+    setFilteredData(filteredCardData);
   };
 
   return (
     <div className="body">
-      <Searchbar filter={filterData} removeFilter={removeFilterData} />
+      <Searchbar
+        filter={filterData}
+        removeFilter={removeFilterData}
+        search={searchRestaurants}
+      />
       <div className="restaurantCardContainer">
-        {cardData.length === 0 ? (
+        {filteredData.length === 0 ? (
           <>
             <ShimmerCard />
             <ShimmerCard />
@@ -45,7 +59,7 @@ export default function Body() {
             <ShimmerCard />
           </>
         ) : (
-          cardData.map((resData) => {
+          filteredData.map((resData) => {
             return <RestaurantCard key={resData.info.id} resData={resData} />;
           })
         )}

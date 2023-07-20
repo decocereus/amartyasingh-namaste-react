@@ -28,17 +28,26 @@ body {
 
 .navContainer {
   width: 70%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .navItemsList {
   display: flex;
   list-style: none;
   justify-content: space-around;
+  align-items: center;
+  width: 40%;
 }
 
 .navItemsList > li {
   font-size: 1em;
   font-weight: 1000;
+}
+
+.loginBtn {
+  background: none;
+  border: none;
 }
 
 .body {
@@ -65,7 +74,8 @@ body {
 }
 
 .filterRestaurantsBtn,
-.removeFilters {
+.removeFilters,
+.loginBtn {
   font-family: "Rubik", sans-serif;
   font-weight: 600;
   background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
@@ -77,7 +87,8 @@ body {
 }
 
 .filterRestaurantsBtn:hover,
-.removeFilters:hover {
+.removeFilters:hover,
+.loginBtn:hover {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
@@ -120,8 +131,6 @@ body {
 .restaurantCardContainer {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
   width: 70%;
   height: 90%;
 }
@@ -130,8 +139,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   width: 30%;
   height: 50%;
-
-  margin: 0;
+  margin: 0 1.3em;
   margin-bottom: 1em;
   background: #c3bef0;
   display: flex;
@@ -201,6 +209,12 @@ h4 {
   margin-top: -200px;
 }
 
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
 .shimmerContainer {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   width: 30%;
@@ -214,10 +228,17 @@ h4 {
   justify-content: space-between;
 }
 
+.shimmerImg,
+.shimmerInfoContainer {
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  animation: 1s shine linear infinite;
+}
+
 .shimmerImg {
   width: 95%;
   height: 205px;
-  background: #f0f0f0;
   margin-top: 10px;
 }
 
@@ -226,7 +247,6 @@ h4 {
   justify-content: space-between;
   margin-top: 1em;
   padding: 1em;
-  background-color: #f0f0f0;
   width: 90%;
   height: 90%;
 }

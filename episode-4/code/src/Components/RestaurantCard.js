@@ -13,7 +13,7 @@ export default function RestaurantCard(props) {
       <div className="restaurantInfoContainer">
         <div className="nameCusineContainer">
           <h3 className="name">{name}</h3>
-          <h4 className="cusine">{cuisines.join(", ")}</h4>
+          <h4 className="cusine">{cuisines.slice(0, 3).join(", ")}</h4>
         </div>
         <div className="priceContainer">
           <h4 className="price">{costForTwo}</h4>
