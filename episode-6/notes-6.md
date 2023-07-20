@@ -21,3 +21,9 @@
 - If we want to get data from our backend and display it onto our frontend, we have two approaches. One we can make the API call, wait for the response and then render the UI.
 - The second approach is we render whatever we have while the API call is proceeding, and once we have the data we re-render our UI.
 - The second approach provides better user experience, since react can re-render very quickly with the help of Virtual DOM and react fiber.
+
+# Whole React component is re=rendered whenever a change is made inside a component.
+
+= If we have a header component and lets say we click on the login button, it should to logout. We will use useState to achieve this.
+
+- So when the button is clicked and the login text is updated to logout the whole header component is re-rendered instead of just the button
