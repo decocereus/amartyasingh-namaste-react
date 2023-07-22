@@ -1,13 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../index.css";
 import { CDN_URL } from "../../utils/constants.js";
 
 export default function RestaurantCard(props) {
   const resData = props.resData;
-  const { cloudinaryImageId, name, cuisines, costForTwo, sla, avgRating } =
+  const navigate = useNavigate();
+  const { cloudinaryImageId, name, cuisines, costForTwo, sla, avgRating, id } =
     resData?.info;
   return (
-    <div className="cardContainer">
+    <div
+      className="cardContainer"
+      onClick={() => {
+        const url = "/restaurant/" + id;
+        navigate(url);
+      }}
+    >
       <img src={CDN_URL + cloudinaryImageId} className="restaurantImg" />
 
       <div className="restaurantInfoContainer">

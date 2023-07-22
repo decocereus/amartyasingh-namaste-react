@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../index.css";
 import { LOGO_URL } from "../../utils/constants.js";
 
 const Header = () => {
   const [loginText, setLoginText] = useState("Login");
-  const navigate = useNavigate();
   const toggleLogin = () => {
     setLoginText(loginText === "Login" ? "Logout" : "Login");
   };
@@ -16,26 +15,14 @@ const Header = () => {
       </div>
       <div className="navContainer">
         <ul className="navItemsList">
-          <li
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            Home
+          <li>
+            <Link to="/">Home</Link>
           </li>
-          <li
-            onClick={() => {
-              navigate("/about");
-            }}
-          >
-            About Us
+          <li>
+            <Link to="/about">About Us</Link>
           </li>
-          <li
-            onClick={() => {
-              navigate("/contact");
-            }}
-          >
-            Contact Us
+          <li>
+            <Link to="/contact">Contact Us</Link>
           </li>
           <li>Cart</li>
           <li>
