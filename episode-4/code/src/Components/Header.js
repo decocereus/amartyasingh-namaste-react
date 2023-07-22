@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../index.css";
 import { LOGO_URL } from "../../utils/constants.js";
 
 const Header = () => {
   const [loginText, setLoginText] = useState("Login");
+  const navigate = useNavigate();
   const toggleLogin = () => {
     setLoginText(loginText === "Login" ? "Logout" : "Login");
   };
@@ -14,9 +16,27 @@ const Header = () => {
       </div>
       <div className="navContainer">
         <ul className="navItemsList">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <li
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Home
+          </li>
+          <li
+            onClick={() => {
+              navigate("/about");
+            }}
+          >
+            About Us
+          </li>
+          <li
+            onClick={() => {
+              navigate("/contact");
+            }}
+          >
+            Contact Us
+          </li>
           <li>Cart</li>
           <li>
             <button className="loginBtn" onClick={toggleLogin}>

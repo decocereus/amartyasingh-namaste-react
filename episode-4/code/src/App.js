@@ -1,31 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./Components/Header";
-import Body from "./Components/Body";
-import Footer from "./Components/Footer";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Components/Home";
+import About from "./Components/About";
+import Contact from "./Components/Contact";
+import Error from "./Components/Error";
 
-/**
- * <Header/>
- *  - logo
- *  - nav bar
- * <Body/>
- *    - search
- *    - restaurant cards
- * <Footer/>
- *    - Copy right
- *    - links
- */
-
-const AppLayout = () => {
-  return (
-    <div className="globalContainer">
-      <Header />
-      <Body />
-      <Footer />
-    </div>
-  );
-};
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+  {
+    path: "/*",
+    element: <Error />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<AppLayout />);
+root.render(<RouterProvider router={routes} />);

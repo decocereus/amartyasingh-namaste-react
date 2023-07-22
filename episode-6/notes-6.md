@@ -27,3 +27,39 @@
 = If we have a header component and lets say we click on the login button, it should to logout. We will use useState to achieve this.
 
 - So when the button is clicked and the login text is updated to logout the whole header component is re-rendered instead of just the button
+
+# What is a microservice?
+
+- A microservice is a small part of a big system. A UI can be a microservice, an authentication service can be a microservice etc. They are used since they are more maintaiable and Whawe don't have to re-build the entire project just to make a small update.
+
+# Why do we need a useEffect hook?
+
+- We need a useEffect hook so that we can enchance user experience while using the website, and to perform async operations like fetching data from some API. useEffect hook is also used to mimic life cycle methods in functional based components. If we want to display some data as soon as the webiste loads then we can either wait for the data to come back and then be displayed or we can first render whatever we have then fetch the data, and then re-render the UI to show the new data. This can be achieved by useEffect hook.
+
+# What is Optinal Chaining?
+
+- Optinal chaining is ususally used on values/objects which might be set as undefined. By using optinal chaining we can ensure that there are no errors thrown and we the app can work without breaking. We use this operator like data?.name now data might be undefined while it is being fetched therefore to avoid any breaking changes we use '?' so that it only unpacks the variable when there is something inside it. If it is undefined then the execution continues without any errors.
+
+# What is Shimmer UI?
+
+- The UI shown while data is being fetched is called shimmer UI. It provides better Ux and has psychological impact on the user because of which they stay on the website for longer. /
+
+# Diff between JS expression and JS statement
+
+- Statements can only be declared while expressions can be assigned.
+
+# What is conditional rendering? Give an example
+
+- If you want to show a part of the UI based on a condition that is conditional rendering. To do this you can use an if statement, ternary operator or && operator. For example we have a <UI> component and a <ShimmerUI> component, while data is being fetched I want to show my ShimmerUI. lets say I am storing data in a useState varaible, so if state.length === 0 {Shimmer} else {UI}
+
+# What is CORS?
+
+- Browsers by default dont allow requests from one orgin to another. This is called CORS or cross-origin resource sharing. To bypass this, the external server needs to return a Allow cors header. A preflight call is made before the actual call to see if the external server allows cors or not.
+
+# What is async and await?
+
+- These key words signify a asynchronous function. They are used in a newway to resolve Promises. We don't have to chain multiple .then() calls to after making a async call or after recieving a promise. async signifies asynchronous and await means just wait until you get a response from the server.
+
+# What is the use of const json = await data.json() in getRestaurants() function
+
+- We capture the response in form of json when it is returned from the server.

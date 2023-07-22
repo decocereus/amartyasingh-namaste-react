@@ -45,6 +45,10 @@ body {
   font-weight: 1000;
 }
 
+.navItemsList > li:hover {
+  transform: scale(1.05);
+}
+
 .loginBtn {
   background: none;
   border: none;
@@ -219,8 +223,7 @@ h4 {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   width: 30%;
   height: 50%;
-  margin: 0;
-  margin-bottom: 1em;
+  margin: 0 1em 1em 1em;
   background: #ffffff;
   display: flex;
   flex-direction: column;

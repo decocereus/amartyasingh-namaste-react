@@ -17,7 +17,7 @@ export default function Body() {
     const res = await fetch(API_URL);
     const json = await res.json();
     const data =
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
     setCardData(data);
     setFilteredData(data);
